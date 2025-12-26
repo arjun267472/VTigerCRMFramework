@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="regression"/>
+        </run>
+    </groups>
+    <test verbose="2" preserve-order="true"
+          name="RRtest1">
+        <classes>
+            <class name="organization.CreateAnOrganizationTest"></class>
+            <class name="opportunities.CreateAnOpportunityTest">
+                <methods>
+                    <exclude name="createOppoWithMandatoryTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

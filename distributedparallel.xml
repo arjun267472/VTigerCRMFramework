@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+    <listeners>
+        <listener class-name="genericutility.ListenerUtil"/>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="test1">
+        <classes>
+            <class name="organization.CreateAnOrganizationTest">
+                <methods>
+                    <include name="createWithMandatoryTest"/>
+                </methods>
+            </class>
+            <class name="opportunities.CreateAnOpportunityTest"/>
+        </classes>
+    </test>
+    <test name="test2" preserve-order="true">
+        <classes>
+            <class name="vendor.VendorTest"/>
+            <class name="products.CreateProductTest"/>
+        </classes>
+    </test>
+    <test name="test3" preserve-order="true">
+        <classes>
+            <class name="organization.CreateAnOrganizationTest">
+                <methods>
+                    <include name="createWithDropDownTest"/>
+                </methods>
+            </class>
+            <class name="contact.CreateAContactTest">
+                <methods>
+                    <include name="createWithOrganizationTest"/>
+                </methods>
+            </class>
+            <class name="email.SaveAnEmailTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="genericutility.ListenerUtil"/>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="test1">
+        <classes>
+            <class name="organization.CreateAnOrganizationTest">
+                <methods>
+                    <include name="createWithDropDownTest"/>
+                </methods>
+            </class>
+            <class name="contact.CreateAContactTest">
+                <methods>
+                    <include name="createWithOrganizationTest"/>
+                </methods>
+            </class>
+            <class name="email.SaveAnEmailTest"/>
+        </classes>
+    </test>
+</suite>

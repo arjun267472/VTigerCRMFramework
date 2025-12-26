@@ -17,7 +17,6 @@ public class VendorTest extends BaseClass {
         createVendorPage.writeVendorName(name);
         vendorInfoPage.vendorValidation(jlib,name);
         Thread.sleep(2000);
-        Assert.fail();
         jdbclib.addCreation("products","vendor_name","TC_08",name);
     }
 }

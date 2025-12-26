@@ -31,7 +31,6 @@ public class CreateAnOrganizationTest extends BaseClass {
         createOrganizationPage.clickAssignedToGroup();//Click On 'Group' Radio Button Of The 'Assigned To' Label And Click
         String assigned=jdbclib.readFromDB("organizations","TC_03","assigned_to");
         Thread.sleep(2000);
-        Assert.fail();
         wlib.selectByVisibleText(createOrganizationPage.getGroupdropdown(),assigned);//On The Group DropDown.Click On 'Team Selling' Option from The DropDown.
         createOrganizationPage.clickSave();//Click On Save Button.
         organizationInfoPage.organizationWithDropDownValidation(driverThread.get(), jlib,orgname,assigned);

@@ -6,8 +6,8 @@
     </listeners>
     <test verbose="2" preserve-order="true"
           name="test1">
-        <classes>
-            <class name="organization.CreateAnOrganizationTest">
+        <classes >
+            <class name="organization.CreateAnOrganizationTest" >
                 <methods>
                     <include name="createWithMandatoryTest"/>
                 </methods>

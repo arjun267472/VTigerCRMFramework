@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.sql.SQLException;
 
 public class CreateAnOpportunityTest extends BaseClass {
-    @Test(dependsOnGroups = "opporg",groups = "regression")
+    @Test(dependsOnMethods = "organization.CreateAnOrganizationTest.createWithMandatoryTest",groups = "regression")
     public void createOppoWithMandatoryTest() throws SQLException {
         //On The Home Page Of VTiger Click On Opportunities From Major Tab.
         homePage.clickOpportunities();
@@ -28,7 +28,6 @@ public class CreateAnOpportunityTest extends BaseClass {
         String date =jdbclib.readFromDB("opportunities","TC_06","close_date");
         wlib.jsSend(driverThread.get(),createOpportunityPage.getClosedateio(),date);
         //Click On Save Button.
-        Assert.fail();
         createOpportunityPage.clickSave();
         opportunityInfoPage.opportunityValidation(driverThread.get(),jlib,name,orgname);
     }

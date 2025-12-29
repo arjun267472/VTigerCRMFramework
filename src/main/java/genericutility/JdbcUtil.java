@@ -2,6 +2,9 @@ package genericutility;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JdbcUtil {
     public static Connection con;
@@ -33,7 +36,23 @@ public class JdbcUtil {
         }
         return null;
     }
-
+    public ArrayList readMultipleFromDB(String table,String tc) throws SQLException {
+        Statement stat = con.createStatement();
+        ArrayList<Map<String , String>> l= new ArrayList<>();
+        ResultSet result = stat.executeQuery("select * from "+table+" where tc_no = '"+tc+"';");
+        ResultSetMetaData metaData = result.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        while(result.next()) {
+            Map<String , String> m=new HashMap<>();
+            for (int i = 0; i <=columnCount; i++) {
+               String col=metaData.getColumnName(i);
+               String value=result.getString(col);
+               m.put(col,value);
+            }
+            l.add(m);
+        }
+        return l;
+    }
     /**
      * Executes based on the query given.
      * @param query

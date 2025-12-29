@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class CreateAnOrganizationTest extends BaseClass {
 
-    @Test(groups = {"regression","opporg"})
+    @Test(groups = {"regression"})
     public void createWithMandatoryTest() throws SQLException {
         //(//span[@class="dvHeaderText"])[normalize-space(substring-before(substring-after(.,']'),'-'))='BioChem.Ltd']
         homePage.clickOrganizations(); //Step1: On The Home Page Of VTiger Click On Organizations From Major Tab.

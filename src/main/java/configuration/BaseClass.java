@@ -26,7 +26,10 @@ public class BaseClass extends SupportConfig {
     public void beforeClass(@Optional("edge") String browser) throws IOException, SQLException {
 //        String browser = plib.readPropFile("browser");
         WebDriver localdriver=null;
-        if (browser.equalsIgnoreCase("edge")) {
+        if (browser == null || browser.isEmpty()) {
+            browser = plib.readPropFile("browser");
+        }
+        else if (browser.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
             edgePopupHandling(options);
              localdriver = new EdgeDriver(options);

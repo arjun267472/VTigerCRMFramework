@@ -45,26 +45,6 @@
             <version>5.1.2</version>
         </dependency>
     </dependencies>
-    <profiles>
-        <profile>
-            <id>BT</id>
-            <properties>
-                <suiteFile>batch.xml</suiteFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>PT</id>
-            <properties>
-                <suiteFile>distributedparallel.xml</suiteFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>CT</id>
-            <properties>
-                <suiteFile>crossbrowser.xml</suiteFile>
-            </properties>
-        </profile>
-    </profiles>
     <build>
         <plugins>
             <plugin>
@@ -74,7 +54,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                        <suiteXmlFile>${suite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

@@ -22,7 +22,7 @@ public class CreateAnOrganizationTest extends BaseClass {
         organizationInfoPage.organizationValidation(jlib,orgname);
         jdbclib.addCreation("opportunities","orgname","TC_06",orgname);
     }
-    @Test(groups = {"smoke","orgcon"},retryAnalyzer = genericutility.RetryImpUtil.class)
+    @Test(groups = {"smoke"},retryAnalyzer = genericutility.RetryImpUtil.class)
     public void createWithDropDownTest() throws SQLException, InterruptedException {
         homePage.clickOrganizations(); //Step1:On The Home Page Of VTiger Click On Organizations From Major Tab.
         organizationsPage.clickCreateOrganizations();//Step2:Click On Create Organization Button.

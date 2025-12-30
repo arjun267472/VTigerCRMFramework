@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.sql.SQLException;
 
 public class SaveAnEmailTest extends BaseClass {
-    @Test(dependsOnGroups = "conemail",groups = "smoke")
+    @Test(dependsOnMethods = "contact.CreateAContactTest.createWithOrganizationTest",groups = "smoke")
     public void createADraftTest() throws SQLException {
         //On The Home Page Of VTiger Click On Email From Major Tab.
         homePage.clickEmail();

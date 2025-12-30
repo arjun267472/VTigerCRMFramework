@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.sql.SQLException;
 
 public class CreateProductTest extends BaseClass {
-    @Test(dependsOnGroups = "venpro")
+    @Test(dependsOnMethods = "vendor.VendorTest.createVendorTest")
     public void createProductWithVendorTest() throws SQLException {
         //"On The Home Page Of VTiger Click On Products From Major Tab."
         homePage.clickProducts();

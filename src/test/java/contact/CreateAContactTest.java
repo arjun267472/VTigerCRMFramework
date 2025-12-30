@@ -17,7 +17,7 @@ public class CreateAContactTest extends BaseClass {
         contactInfoPage.contactValidation(name, jlib);
     }
 
-    @Test(dependsOnGroups = "orgcon",groups = {"smoke","conemail"})
+    @Test(dependsOnMethods = "organization.CreateAnOrganizationTest.createWithDropDownTest",groups = {"smoke"})
     public void createWithOrganizationTest() throws SQLException {
         //On The Home Page Of VTiger Click On Contacts From Major Tab.
         homePage.clickContacts();

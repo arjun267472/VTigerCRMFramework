@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.sql.SQLException;
 
 public class VendorTest extends BaseClass {
-    @Test(groups = "venpro")
+    @Test()
     public void createVendorTest() throws SQLException, InterruptedException {
         //"On The Home Page Of VTiger Click On Quick Create Drop Down And Select 'New Vendor' Option."
         wlib.selectByValue(homePage.getQuickcreate(),"Vendors");

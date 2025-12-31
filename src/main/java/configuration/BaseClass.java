@@ -25,7 +25,7 @@ public class BaseClass extends SupportConfig {
     @BeforeClass(alwaysRun = true)
     public void beforeClass(@Optional String browser) throws IOException, SQLException {
         WebDriver localdriver=null;
-        if ((System.getProperty("browser") != null) || browser == null || browser.isEmpty()) {
+        if ((System.getProperty("browser") != null) && (browser == null || browser.isEmpty())) {
             browser = System.getProperty("browser");
         } else if (browser == null || browser.isEmpty()) {
             browser = plib.readPropFile("browser");
